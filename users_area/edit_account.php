@@ -14,24 +14,24 @@
     if(isset($_POST['user_update'])){
         $update_id = $user_id;
 
-        // Sécuriser les entrées utilisateur
+        // get user data
         $username   = $_POST['user_username'];
         $user_email = $_POST['user_email'];
         $user_address = $_POST['user_address'];
         $user_mobile  = $_POST['user_mobile'];
 
-        // Gestion de l'image
+        // get image
         $user_image = $_FILES['user_image']['name'];
         $user_image_temp = $_FILES['user_image']['tmp_name'];
 
         if(!empty($user_image)){
             move_uploaded_file($user_image_temp,"./user_images/$user_image");
         } else {
-            // si pas d'image envoyée → garder l'ancienne
+            // if no new image is uploaded, keep the old image
             $user_image = $row_fetch['user_image'];
         }
 
-        // Requête préparée
+        // update query
         $update_data = "UPDATE `user_table` 
                     SET username = ?, 
                         user_email = ?, 
@@ -42,9 +42,9 @@
 
         $stmt = mysqli_prepare($con, $update_data);
 
-        if($stmt){
-            // Liaison des paramètres (s = string, i = integer)
-            mysqli_stmt_bind_param($stmt, "sssssi",
+        if($statement){
+            // Liaison des paramètres (s = string, i = integer) donne le type de données
+            mysqli_stmt_bind_param($statement, "sssssi",
                 $username,
                 $user_email,
                 $user_image,
@@ -53,19 +53,19 @@
                 $update_id
             );
 
-            // Exécution
-            $result = mysqli_stmt_execute($stmt);
+            // execute
+            $result = mysqli_stmt_execute($statement);
 
             if($result){
                 echo "<script>alert('Data updated successfully')</script>";
                 echo "<script>window.open('logout.php','_self')</script>";
             } else {
-                echo "Erreur lors de la mise à jour : " . mysqli_stmt_error($stmt);
+                echo "Error during update : " . mysqli_stmt_error($statement);
             }
 
-            mysqli_stmt_close($stmt);
+            mysqli_stmt_close($statement);
         } else {
-            echo "Erreur de préparation : " . mysqli_error($con);
+            echo "preparation error : " . mysqli_error($con);
         }
     }
     ?>
@@ -96,8 +96,8 @@
         <div class="form-outline mb-4">
              <input type="text" class="form-control w-50 m-auto" value="<?php echo $user_mobile ?>" name="user_mobile" autocomplete="off" required="required">
         </div>
-        <div class="form-outline mb-4 ">
-             <input type="submit" class="form-control w-50 m-auto btn btn-info" value="Update" name="user_update">
+        <div class="form-outline mb-4">
+             <input type="submit" class="form-control w-50 m-auto btn btn-danger" value="Update" name="user_update">
         </div>
     </form>
 </body>

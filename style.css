@@ -1,6 +1,63 @@
+/* ====================================
+   ECOMMERCE WEBSITE - CUSTOM STYLES
+   ==================================== */
+
+/* ========== RESET & BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* ========== LAYOUT & CONTAINERS ========== */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ========== NAVIGATION ========== */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+}
+
+/* ========== LOGOS & BRANDING ========== */
 .logo {
-    width: 7%;
-    height: 7%;
+    width: 50px;  /* Plus spécifique que 7% pour la cohérence */
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* ========== PRODUCT CARDS ========== */
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
 .card-img-top {
@@ -8,11 +65,256 @@
     height: 200px;
     object-fit: contain;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 
+.card-img-top:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* ========== PRODUCT PRICING ========== */
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* ========== CART & SHOPPING ========== */
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon sup {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    background-color: #6c757d;
+    min-height: 100vh;
+}
+
+.sidebar .nav-link {
+    color: white;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* ========== ADMIN AREA ========== */
 .admin_image {
     width: 100px;
+    height: 100px;
     object-fit: contain;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+}
+
+.admin_image:hover {
+    border-color: #007bff;
+}
+
+/* ========== FORMS ========== */
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+    border-color: #80bdff;
+}
+
+.search-form {
+    max-width: 300px;
+}
+
+/* ========== STORE HEADER ========== */
+.store-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 30px 0;
+}
+
+.store-header h3 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.store-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ========== PRODUCT DETAILS PAGE ========== */
+.product-detail-image {
+    max-width: 100%;
+    height: 400px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin: 20px 0;
+}
+
+.product-description {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .product-detail-image {
+        height: 250px;
+    }
+
+    .search-form {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 120px;
+    }
+
+    .product-price {
+        font-size: 1.5rem;
+    }
+
+    .admin_image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ========== UTILITY CLASSES ========== */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.border-radius-lg {
+    border-radius: 10px;
+}
+
+/* ========== LOADING STATES ========== */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
