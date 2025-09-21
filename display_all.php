@@ -1,23 +1,22 @@
 <?php
-// display_all.php - Version refactorisée
 
-// Configuration spécifique à cette page
+// specific variables for this page
 $page_title = "All Products - Ecommerce Store";
 $brand_name = "Demo Store";
 $store_title = "My Potential E-commerce";
 $store_subtitle = "Practice is the key to learn";
 $show_dropdown = true;
-$call_cart_function = true; // Active la fonction cart() dans navbar
+$call_cart_function = true; // cart function
 
-// Inclusions nécessaires
+// necessary includes
 include('includes/connect.php');
 include('functions/common_function.php');
 session_start();
 
-// Inclusion de l'en-tête
+// header
 include('includes/header.php');
 
-// Inclusion de la navbar
+// navbar
 include('includes/navbar.php');
 ?>
 
@@ -27,7 +26,7 @@ include('includes/navbar.php');
         <div class="col-md-10">
             <div class="row px-3">
                 <?php
-                // Appel des fonctions spécifiques à cette page
+                // functions to display products
                 getproducts();
                 get_unique_categories();
                 get_unique_brands();
@@ -44,7 +43,7 @@ include('includes/navbar.php');
     </div>
 
 <?php
-// Inclusion du footer et scripts
+// footer and scripts
 include('includes/footer.php');
 include('includes/footer_scripts.php');
 ?>

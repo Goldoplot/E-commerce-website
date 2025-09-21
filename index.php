@@ -16,10 +16,8 @@ session_start();
 // calling cart function
 cart();
 
-// Inclusion de l'en-tête
+// header and navbar
 include('includes/header.php');
-
-// Inclusion de la navbar
 include('includes/navbar.php');
 ?>
 
@@ -29,7 +27,7 @@ include('includes/navbar.php');
         <div class="col-md-10">
             <div class="row px-3">
                 <?php
-                // Appel des fonctions pour afficher les produits
+                // functions to display products
                 get_all_products();
                 get_unique_categories();
                 get_unique_brands();
@@ -46,9 +44,7 @@ include('includes/navbar.php');
     </div>
 
 <?php
-// Inclusion du footer
+// footer and scripts
 include('includes/footer.php');
-
-// Inclusion des scripts
 include('includes/footer_scripts.php');
 ?>

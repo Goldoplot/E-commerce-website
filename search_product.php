@@ -1,7 +1,6 @@
 <?php
-// search_product.php - Version refactorisée
 
-// Configuration spécifique à cette page
+// specific config for the page
 $search_term = isset($_GET['Search_data']) ? $_GET['Search_data'] : '';
 $page_title = $search_term ? "Search Results for '$search_term'" : "Search Products";
 $brand_name = "Demo Store";
@@ -10,12 +9,12 @@ $store_subtitle = "Practice is the key to learn";
 $show_dropdown = true;
 $call_cart_function = true;
 
-// Inclusions nécessaires
+// necessary includes and session start
 include('includes/connect.php');
 include('functions/common_function.php');
 session_start();
 
-// Configuration optionnelle avec config.php
+// optional config include
 if (file_exists('includes/config.php')) {
     include('includes/config.php');
     setup_page_config([
@@ -28,36 +27,7 @@ if (file_exists('includes/config.php')) {
     ]);
 }
 
-// CSS spécifique pour la recherche
-$inline_css = '
-    .search-results-header {
-        background: linear-gradient(135deg, #17a2b8, #138496);
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-    .search-term {
-        background-color: rgba(255,255,255,0.2);
-        padding: 5px 15px;
-        border-radius: 20px;
-        display: inline-block;
-        margin: 10px 0;
-    }
-    .no-results {
-        text-align: center;
-        padding: 50px 20px;
-        color: #6c757d;
-    }
-    .no-results i {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        opacity: 0.5;
-    }
-';
-
-// Inclusion de l'en-tête et navigation
+// header and navbar
 include('includes/header.php');
 include('includes/navbar.php');
 ?>
@@ -86,9 +56,9 @@ include('includes/navbar.php');
                 <!-- Products Grid -->
                 <div class="row px-3">
                     <?php
-                    // Vérifier s'il y a des résultats avant d'afficher
+                    // check if search term is provided
                     if($search_term) {
-                        // Appel de la fonction de recherche
+                        // search function
                         search_product();
                     } else {
                         echo "<div class='no-results col-12'>
@@ -98,7 +68,7 @@ include('includes/navbar.php');
                           </div>";
                     }
 
-                    // Fonctions pour les catégories et marques
+                    // functions for brands and categories
                     get_unique_categories();
                     get_unique_brands();
                     ?>
@@ -125,7 +95,7 @@ include('includes/navbar.php');
     </div>
 
 <?php
-// Inclusion du footer et scripts
+// footer and scripts
 include('includes/footer.php');
 include('includes/footer_scripts.php');
 ?>

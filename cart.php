@@ -1,7 +1,5 @@
 <?php
-// cart.php - Version refactorisée
-
-// Configuration spécifique à cette page
+// specific configurations for this page
 $page_title = "Shopping Cart - Ecommerce Store";
 $brand_name = "Demo Store";
 $store_title = "My Potential E-commerce";
@@ -9,12 +7,12 @@ $store_subtitle = "Practice is the key to learn";
 $show_dropdown = true;
 $call_cart_function = true;
 
-// Inclusions nécessaires
+// necessary includes and session start
 include('includes/connect.php');
 include('functions/common_function.php');
 session_start();
 
-// Configuration optionnelle avec config.php
+// optional configuration include
 if (file_exists('includes/config.php')) {
     include('includes/config.php');
     setup_page_config([
@@ -27,33 +25,9 @@ if (file_exists('includes/config.php')) {
     ]);
 }
 
-// CSS spécifique pour le panier
-$inline_css = '
-    .cart-table {
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    .cart-item-image {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
-        border-radius: 5px;
-    }
-    .quantity-input {
-        max-width: 80px;
-        text-align: center;
-    }
-    .cart-total {
-        background: linear-gradient(135deg, #17a2b8, #138496);
-        color: white;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 20px 0;
-    }
-';
 
-// Inclusion de l'en-tête et navigation
+
+// header and navbar
 include('includes/header.php');
 include('includes/navbar.php');
 ?>
@@ -68,7 +42,7 @@ include('includes/navbar.php');
                     <?php
                     $get_ip_address = getIPAddress();
 
-                    // 1️⃣ Mise à jour des quantités si formulaire soumis
+                    // update cart logic
                     if(isset($_POST['update_cart'])){
                         if(isset($_POST['qty'])){
                             foreach($_POST['qty'] as $product_id => $quantity){
@@ -84,7 +58,7 @@ include('includes/navbar.php');
                         }
                     }
 
-                    // 2️⃣ Supprimer des articles si demandé
+                    // delete cart item logic
                     if(isset($_POST['remove_cart'])){
                         if(isset($_POST['removeitem'])){
                             foreach($_POST['removeitem'] as $remove_id){
@@ -94,7 +68,7 @@ include('includes/navbar.php');
                         }
                     }
 
-                    // 3️⃣ Récupérer le panier après modifications
+                    // retrieve cart items
                     $cart_query = "SELECT * FROM `cart_details` WHERE ip_address='$get_ip_address'";
                     $result = mysqli_query($con, $cart_query);
                     $result_count = mysqli_num_rows($result);
@@ -138,7 +112,7 @@ include('includes/navbar.php');
                                         <td class="align-middle">
                                             <img src="./admin_area/product_images/<?php echo $product_image1; ?>"
                                                  alt="<?php echo htmlspecialchars($product_title); ?>"
-                                                 class="cart-item-image">
+                                                 class="card-img-top">
                                         </td>
                                         <td class="align-middle">
                                             <input type="number"
@@ -206,7 +180,7 @@ include('includes/navbar.php');
                         </div>
                     <?php endif;
 
-                    // Redirection si continue shopping
+                    // Redirect to homepage if continue shopping is clicked
                     if(isset($_POST['continue_shopping'])){
                         echo "<script>window.location.href='index.php'</script>";
                     }
@@ -217,7 +191,7 @@ include('includes/navbar.php');
     </div>
 
 <?php
-// Inclusion du footer et scripts
+// footer and scripts
 include('includes/footer.php');
 include('includes/footer_scripts.php');
 ?>

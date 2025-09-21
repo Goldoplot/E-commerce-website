@@ -18,17 +18,5 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo isset($css_path) ? $css_path : './'; ?>style.css">
 
-    <?php if(isset($additional_css)): ?>
-        <?php foreach($additional_css as $css): ?>
-            <link rel="stylesheet" href="<?php echo $css; ?>">
-        <?php endforeach; ?>
-    <?php endif; ?>
-
-    <!-- Custom inline styles if needed -->
-    <?php if(isset($inline_css)): ?>
-        <style>
-            <?php echo $inline_css; ?>
-        </style>
-    <?php endif; ?>
 </head>
 <body>

@@ -34,41 +34,7 @@ if (file_exists('../includes/config.php')) {
     ]);
 }
 
-// Custom inline CSS for profile page
-$inline_css = '
-    .profile_image {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid #17a2b8;
-        transition: transform 0.3s ease;
-    }
-    .profile_image:hover {
-        transform: scale(1.05);
-    }
-    .profile-sidebar {
-        background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-        min-height: calc(100vh - 200px);
-        border-radius: 0 10px 10px 0;
-    }
-    .profile-sidebar .nav-link {
-        transition: all 0.3s ease;
-        margin: 2px 0;
-        border-radius: 5px;
-    }
-    .profile-sidebar .nav-link:hover {
-        background-color: rgba(255,255,255,0.1);
-        transform: translateX(10px);
-    }
-    .profile-content {
-        background-color: #f8f9fa;
-        min-height: calc(100vh - 200px);
-        padding: 30px;
-        border-radius: 10px 0 0 10px;
-        box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
-    }
-';
+
 
 // header inclusion with paths adjusted
 include('../includes/header.php');
@@ -163,7 +129,7 @@ include('../includes/header.php');
         <div class="row g-0">
             <!-- Profile Sidebar -->
             <div class="col-md-2 profile-sidebar">
-                <ul class="navbar-nav text-center py-3">
+                <ul class="navbar-nav text-center bg-secondary py-3">
                     <li class="nav-item bg-info mb-3 rounded">
                         <a class="nav-link text-light py-3" href="#">
                             <h4><i class="fas fa-user-circle"></i> Your Profile</h4>
@@ -193,7 +159,7 @@ include('../includes/header.php');
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="profile.php?edit_account">
-                            <i class="fas fa-user-edit"></i> Edit Account
+                            <i class="fas fa-user-edit "></i> Edit Account
                         </a>
                     </li>
                     <li class="nav-item">
@@ -202,7 +168,7 @@ include('../includes/header.php');
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light text-warning" href="profile.php?delete_account">
+                        <a class="nav-link text-warning" href="profile.php?delete_account">
                             <i class="fas fa-user-times"></i> Delete Account
                         </a>
                     </li>
