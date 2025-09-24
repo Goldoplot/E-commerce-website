@@ -1,14 +1,14 @@
 <?php
-// includes/connect.php - upgraded version with error handling and comments
 
-// databse connection parameters
-define('DB_HOST', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'mystore');
+// database connection parameters (from railway)
+define('DB_HOST', getenv('DB_HOST'));
+define('DB_USERNAME', getenv('DB_USER'));
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
+define('DB_NAME', getenv('DB_NAME'));
+define('DB_PORT', getenv('DB_PORT') ?: 3306); // default MySQL = 3306
 
 // connexion to the database
-$con = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$con = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
 
 // Check connection
 if (!$con) {
