@@ -1,4 +1,22 @@
-:8080 {
-    root * .
-    php_server
+{
+    auto_https off
+    admin off
+}
+
+:$PORT {
+    root * public
+
+    # Configuration PHP
+    php_server {
+        index index.php
+    }
+
+    # Servir les fichiers statiques
+    file_server
+
+    # Logs pour debug
+    log {
+        output stdout
+        level INFO
+    }
 }
