@@ -1,12 +1,4 @@
 :8080 {
-    root * .
-    php_server {
-        index index.php
-    }
-    file_server
-
-    log {
-        output stdout
-        level DEBUG
-    }
+root * .
+php_server
 }
