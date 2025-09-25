@@ -3,13 +3,11 @@
     admin off
 }
 
-:$PORT {
-    root * public
+:{$PORT:8080} {
+    root * .
 
     # Configuration PHP
-    php_server {
-        index index.php
-    }
+    php_server
 
     # Servir les fichiers statiques
     file_server
