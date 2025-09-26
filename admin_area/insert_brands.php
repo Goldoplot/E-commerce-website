@@ -1,5 +1,5 @@
 <?php
-include('../includes/connect.php.bak');
+include('../includes/connect.php');
 if(isset($_POST['insert_brand'])){
     $brand_title=$_POST['brand_title'];
 

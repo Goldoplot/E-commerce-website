@@ -1,6 +1,6 @@
 
 <?php
-    include('../includes/connect.php.bak');
+    include('../includes/connect.php');
     include('../functions/common_function.php');
 ?>
 <!doctype html>

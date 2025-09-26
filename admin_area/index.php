@@ -1,5 +1,5 @@
 <?php
-include('../includes/connect.php.bak');
+include('../includes/connect.php');
 // include the function file
 include('../functions/common_function.php');
 session_start();

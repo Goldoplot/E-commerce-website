@@ -12,7 +12,7 @@ $home_path = "../";
 $users_path = "./";
 
 // Includes and session start
-include('../includes/connect.php.bak');
+include('../includes/connect.php');
 include('../functions/common_function.php');
 session_start();
 
@@ -47,14 +47,14 @@ include('../includes/header.php');
         <!-- primary navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid p-0">
-                <a class="navbar-brand" href="../index.php"><?php echo $brand_name; ?></a>
+                <a class="navbar-brand" href="../public/index.php"><?php echo $brand_name; ?></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.php">Home</a>
+                            <a class="nav-link" href="../public/index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../display_all.php">Products</a>

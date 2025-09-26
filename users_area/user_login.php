@@ -1,5 +1,5 @@
 <?php
-include('../includes/connect.php.bak');
+include('../includes/connect.php');
 include('../functions/common_function.php');
 @session_start();
 ?>
@@ -37,7 +37,7 @@ include('../functions/common_function.php');
                     <input type="submit" value="Login" class="btn btn-info btn-lg" name="user_login"/>
                     <p class="small fw-bold mt-2 pt-1 mb-0">You have an account ? <a href="user_registration.php" class="link-danger">Sign-in</a></p>
                     <p class="small fw-bold mt-2 pt-1 mb-0">You are an admin ? <a href="../admin_area/admin_login.php" class="link-danger">Admin</a></p>
-                    <p class="small fw-bold mt-2 pt-1">Back to Home<a href="../index.php" class="link-danger">Home</a></p>
+                    <p class="small fw-bold mt-2 pt-1">Back to Home<a href="../public/index.php" class="link-danger">Home</a></p>
                 </div>
             </form>
         </div>
