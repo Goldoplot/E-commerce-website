@@ -1,8 +1,0 @@
-:8080 {
-    root * .
-    php_server {
-        root .
-        config php.ini
-    }
-    file_server
-}
