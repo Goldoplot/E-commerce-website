@@ -1,20 +1,5 @@
-{
-    auto_https off
-    admin off
-}
 
-:{$PORT:8080} {
-    root * .
-
-    # Configuration PHP
-    php_server
-
-    # Servir les fichiers statiques
-    file_server
-
-    # Logs pour debug
-    log {
-        output stdout
-        level INFO
-    }
-}
+:{$PORT:8080}
+root * .
+php_server
+file_server
