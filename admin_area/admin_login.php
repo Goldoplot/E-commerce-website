@@ -37,7 +37,7 @@ include('../functions/common_function.php');
 
             <p class="small fw-bold mt-2 pt-1">No account? <a href="admin_registration.php" class="link-danger">Register</a></p>
             <p class="small fw-bold mt-2 pt-1">Not an admin? <a href="../users_area/user_login.php" class="link-danger">User page</a></p>
-            <p class="small fw-bold mt-2 pt-1">Back to Home <a href="../public/index.php" class="link-danger">Home</a></p>
+            <p class="small fw-bold mt-2 pt-1">Back to Home <a href="../index.php" class="link-danger">Home</a></p>
         </div>
 </body>
 

@@ -9,16 +9,16 @@ $store_subtitle = "Practice is the key to learn";
 $show_dropdown = true;
 
 // Inclusions nécessaires
-include('./includes/connect.php');
-include('./functions/common_function.php');
+include('includes/connect.php');
+include('functions/common_function.php');
 session_start();
 
 // calling cart function
 cart();
 
 // header and navbar
-include('./includes/header.php');
-include('./includes/navbar.php');
+include('includes/header.php');
+include('includes/navbar.php');
 ?>
 
     <!-- Main Content Area -->
@@ -39,12 +39,12 @@ include('./includes/navbar.php');
         <?php
         $brands_title = "Delivery Brands";
         $categories_title = "Categories";
-        include('./includes/sidebar.php');
+        include('includes/sidebar.php');
         ?>
     </div>
 
 <?php
 // footer and scripts
-include('./includes/footer.php');
-include('./includes/footer_scripts.php');
+include('includes/footer.php');
+include('includes/footer_scripts.php');
 ?>

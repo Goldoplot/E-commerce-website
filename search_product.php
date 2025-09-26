@@ -79,7 +79,7 @@ include('includes/navbar.php');
                     <a href="display_all.php" class="btn btn-outline-info">
                         <i class="fas fa-arrow-left"></i> View All Products
                     </a>
-                    <a href="public/index.php" class="btn btn-info ms-2">
+                    <a href="index.php" class="btn btn-info ms-2">
                         <i class="fas fa-home"></i> Back to Home
                     </a>
                 </div>

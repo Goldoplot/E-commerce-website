@@ -373,7 +373,7 @@ function get_user_details(){
                         <p class='text-center'><a href='profile.php?my_orders' class='btn btn-warning'>Order details</a></p>";
                     }else{
                         echo "<h3 class='text-center text-success my-5'>You have no pending orders</h3>
-                        <p class='text-center'><a href='../public/index.php' class='btn btn-warning'>Explore products</a></p>";}
+                        <p class='text-center'><a href='../index.php' class='btn btn-warning'>Explore products</a></p>";}
                 }
             }
         }
