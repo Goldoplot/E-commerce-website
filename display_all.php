@@ -9,7 +9,7 @@ $show_dropdown = true;
 $call_cart_function = true; // cart function
 
 // necessary includes
-include('includes/connect.php');
+include('includes/connect.php.bak');
 include('functions/common_function.php');
 session_start();
 

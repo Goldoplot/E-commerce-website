@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include("../includes/connect.php");
+include("../includes/connect.php.bak");
 if(isset($_POST['insert_product'])){
 
     $product_title=$_POST['product_title'];

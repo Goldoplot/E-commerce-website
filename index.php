@@ -9,7 +9,7 @@ $store_subtitle = "Practice is the key to learn";
 $show_dropdown = true;
 
 // Inclusions nécessaires
-include('includes/connect.php');
+include('includes/connect.php.bak');
 include('functions/common_function.php');
 session_start();
 

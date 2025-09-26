@@ -11,7 +11,7 @@ $home_path = "../";
 $users_path = "./";
 
 // Include database connection and start session
-include('../includes/connect.php');
+include('../includes/connect.php.bak');
 session_start();
 
 // Include configuration if exists

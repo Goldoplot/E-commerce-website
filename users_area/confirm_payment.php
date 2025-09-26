@@ -1,6 +1,6 @@
 <!--connect file-->
 <?php
-include('../includes/connect.php');
+include('../includes/connect.php.bak');
 session_start();
     if(isset($_GET['order_id'])){
         $order_id = $_GET['order_id'];

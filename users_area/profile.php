@@ -12,7 +12,7 @@ $home_path = "../";
 $users_path = "./";
 
 // Includes and session start
-include('../includes/connect.php');
+include('../includes/connect.php.bak');
 include('../functions/common_function.php');
 session_start();
 
