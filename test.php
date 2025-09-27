@@ -1,6 +1,13 @@
 <?php
+$con = mysqli_connect(
+    getenv('DB_HOST'),
+    getenv('DB_USER'),
+    getenv('DB_PASSWORD'),
+    getenv('DB_NAME'),
+    getenv('DB_PORT') ?: 3306
+);
 
-echo "✅ PHP fonctionne !<br>";
-echo "DB_HOST = " . getenv("DB_HOST") . "<br>";
-echo "DB_USER = " . getenv("DB_USER") . "<br>";
-echo "DB_NAME = " . getenv("DB_NAME") . "<br>";
+if (!$con) {
+    die("❌ Erreur connexion DB: " . mysqli_connect_error());
+}
+echo "✅ Connexion MySQL réussie avec mysqli !";
