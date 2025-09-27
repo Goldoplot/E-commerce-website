@@ -1,17 +1,13 @@
-# Active le moteur de réécriture
 RewriteEngine On
 
-# Autorise l'accès aux fichiers PHP
 <Files "*.php">
     Require all granted
 </Files>
 
-# Configuration pour les fichiers statiques
 <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
     Require all granted
 </FilesMatch>
 
-# Sécurité - Masque les fichiers sensibles
 <Files ".env">
     Require all denied
 </Files>
@@ -19,7 +15,3 @@ RewriteEngine On
 <Files "*.log">
     Require all denied
 </Files>
-
-# Gestion des erreurs personnalisées (optionnel)
-# ErrorDocument 404 /404.php
-# ErrorDocument 500 /500.php
