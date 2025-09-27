@@ -8,7 +8,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 COPY . /var/www/html/
 
 # Expose le port utilisé par Railway
-EXPOSE 8080
+EXPOSE ${PORT}
 
 # Démarre Apache au foreground
 CMD ["apache2-foreground"]
