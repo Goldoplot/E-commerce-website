@@ -11,4 +11,4 @@ COPY . /var/www/html/
 EXPOSE 8080
 
 # Démarre Apache au foreground
-CMD ["apache2-foreground"]p", "-b"]
+CMD ["apache2-foreground"]
